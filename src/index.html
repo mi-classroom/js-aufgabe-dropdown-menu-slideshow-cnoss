@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musikfestivals: Kleine Übungsaufgabe im Teilmodul Frontend-Development</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="main-header__menu-bar" >
+      <button class="hamburger-button" data-main-navigation="[data-menu-nav]">
+        <svg width="100%" height="100%" viewBox="0 0 225 175" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <rect class="hamburger-button__bar-top" fill="#FFFFFF" x="25" y="25" width="175" height="25"></rect>
+            <rect class="hamburger-button__bar-middle" fill="#FFFFFF" x="25" y="75" width="175" height="25"></rect>
+            <rect class="hamburger-button__bar-bottom" fill="#FFFFFF" x="25" y="125" width="175" height="25"></rect>
+          </g>
+        </svg>
+      </button>
+      <nav class="main-header__menu-bar-nav" data-menu-nav>
+        <ul class="menu-list">
+          <li class="menu-list__item"><a class="menu-list__link" href="#">Home</a></li>
+          <li class="menu-list__item"><a class="menu-list__link" href="open-air-festivals.html">Open Air Festivals</a></li>
+          <li class="menu-list__item"><a class="menu-list__link" href="maiwoche.html">Maiwoche</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="main-header__group">
+      <h1 class="main-header__title">Musikfestivals</h1>
+      <h2 class="main-header__subtitle">Kleine Übungsaufgabe im Teilmodul Frontend-Development</h2>
+    </div>
+  </header>
+
+  <div class="content-wrap">
+    <main class="main-content">
+      <section class="main-content__section">
+        <p class="copytext">Musikfestivals sind in der Regel jährlich wiederkehrende musikalische Großveranstaltungen. Der Begriff „Festival“ ist eng angelehnt an den Begriff „Festspiele“. Damit bezeichnet man Veranstaltungen, die sich durch den Ort und ihre Gestaltung aus
+          dem Rahmen alltäglich umsetzbarer Konzerte herausheben. Sie zeichnen sich durch ihre gesellschaftliche Bedeutung, ihre Größe und durch ihre musikalische Vielfalt aus. Festivals verzeichnen heute oftmals hohe Besucherzahlen und können sich über
+          einen längeren Zeitraum erstrecken. Sie sind meist auf eine bestimmte Musikrichtung oder Interessengruppe ausgerichtet und können fester Bestandteil von Jugendkulturen sein.</p>
+        <p class="copytext">Mittlerweile sind die meisten Musikfestivals Open-Air-Festivals.</p>
+      </section>
+
+      <section class="main-content__section">
+        <h2>Auflistung aktueller deutscher Festivals mit mindestens 200.000 Besuchern</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="table__head">Name </th>
+              <th scope="col" class="table__head table__head--less-important">Genre </th>
+              <th scope="col" class="table__head table__head--less-important">Ort </th>
+              <th scope="col" class="table__head table__head--is-number">Besucher</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table__cell">Bochum Total </td>
+              <td class="table__cell table__cell--less-important">Pop, Rock </td>
+              <td class="table__cell table__cell--less-important">Bochum </td>
+              <td class="table__cell table__cell--is-number">1.000.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Maiwoche </td>
+              <td class="table__cell table__cell--less-important">verschiedene Stilrichtungen </td>
+              <td class="table__cell table__cell--less-important">Osnabrück </td>
+              <td class="table__cell table__cell--is-number">800.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Internationales Dixieland Festival Dresden </td>
+              <td class="table__cell table__cell--less-important">Jazz </td>
+              <td class="table__cell table__cell--less-important">Dresden </td>
+              <td class="table__cell table__cell--is-number">500.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Schlagermove </td>
+              <td class="table__cell table__cell--less-important">Schlager </td>
+              <td class="table__cell table__cell--less-important">Hamburg </td>
+              <td class="table__cell table__cell--is-number">400.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Das Fest </td>
+              <td class="table__cell table__cell--less-important">Rock, Pop, Electro, Hip-Hop </td>
+              <td class="table__cell table__cell--less-important">Karlsruhe </td>
+              <td class="table__cell table__cell--is-number">400.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Schlossgrabenfest </td>
+              <td class="table__cell table__cell--less-important">Pop, Schlager, Rock </td>
+              <td class="table__cell table__cell--less-important">Darmstadt </td>
+              <td class="table__cell table__cell--is-number">400.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Rock im Park </td>
+              <td class="table__cell table__cell--less-important">Rock </td>
+              <td class="table__cell table__cell--less-important">Nürnberg </td>
+              <td class="table__cell table__cell--is-number">210.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Bardentreffen </td>
+              <td class="table__cell table__cell--less-important">Folk, Worlsmusik, Rock, Pop, Bühnen- und Straßenmusik </td>
+              <td class="table__cell table__cell--less-important">Nürnberg </td>
+              <td class="table__cell table__cell--is-number">200.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Breminale </td>
+              <td class="table__cell table__cell--less-important">Rock, Pop, Jazz, Elektro, Hip-Hop </td>
+              <td class="table__cell table__cell--less-important">Bremen </td>
+              <td class="table__cell table__cell--is-number">220.000</td>
+            </tr>
+            <tr>
+              <td class="table__cell">Düsseldorfer Jazz-Rally </td>
+              <td class="table__cell table__cell--less-important">Jazz </td>
+              <td class="table__cell table__cell--less-important">Düsseldorf </td>
+              <td class="table__cell table__cell--is-number">300.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="main-content__section">
+        <h2>Die 5 größten Festivals weltweit</h2>
+        <p class="subtitle">gemessen an der Besucherzahl</p>
+        <ol class="ranking">
+          <li class="ranking__item list-item">Donauinselfest <span class="list-item__number">2.800.000</span></li>
+          <li class="ranking__item list-item">Mawazine <span class="list-item__number">2.500.000</span></li>
+          <li class="ranking__item list-item">Rock in Rio <span class="list-item__number">1.300.000</span></li>
+          <li class="ranking__item list-item">Streetparade <span class="list-item__number">1.100.000</span></li>
+          <li class="ranking__item list-item">Bochum Total <span class="list-item__number">1.000.000</span></li>
+        </ol>
+
+        <p class="copytext">Gerade bei Festivals, die eine sehr hohe Besucherzahl aufweisen, wurden die Besucher pro Bühnenevent gezählt und nicht die Gesamtanzahl an Personen, die an dem Festival teilgenommen haben. Es ist darauf hinzuweisen, dass manche Festivalveranstalter
+          die Gesamtzahl als "alle Tagesbesucher zusammenaddiert" angeben und damit größer erscheinen als manche klassischen großen Rockfestivals, die lediglich die Gesamtzahl der verkauften Mehrtagestickets angeben.
+        </p>
+      </section>
+    </main>
+
+    <aside class="aside-content">
+      <section class="aside-content__section">
+        <h2 class="aside-content__headline">Das könnte Sie auch interessieren:</h2>
+        <ul class="card-overview">
+          <li class="card-overview__item">
+            <figure class="teaser" >
+              <div class="slide-show" data-slide-show="[data-slide]">
+                <div>
+                  <img src="./images/maiwoche-m.jpg" alt="Maiwoche" class="teaser__image slide-show__slide" data-slide>
+                  <img src="./images/maiwoche-marktplatz-m.jpg" alt="Maiwoche Marktplatz" class="teaser__image slide-show__slide" data-slide>
+                  <img src="./images/maiwoche-bigband-m.jpg" alt="Maiwoche Bigband" class="teaser__image slide-show__slide" data-slide>
+                </div>
+                <span class="slide-show__nav-previous" data-nav-previous-slide></span>
+                <span class="slide-show__nav-next" data-nav-next-slide></span>
+              </div>
+
+              <figcaption>
+                <h2 class="teaser__headline">Maiwoche</h2>
+                <p class="teaser__text">Maiwoche ist der Name eines alljährlich stattfindenden Festes, das es sowohl in Osnabrück als auch in Herdecke gibt.</p>
+                <a href="maiwoche.html" class="teaser__cta">mehr zur Maiwoche</a>
+              </figcaption>
+
+            </figure>
+          </li>
+          <li class="card-overview__item">
+            <figure class="teaser">
+              <div class="slide-show" data-slide-show="[data-slide]">
+                <div>
+                  <img src="./images/duesseldorfer-jazz-rally-m.jpg" alt="Düsseldorfer Jazz Rally" class="teaser__image slide-show__slide" data-slide>
+                  <img src="./images/dixieland-dresden-m.jpg" alt="Dixieland Dresden" class="teaser__image slide-show__slide" data-slide>
+                  <img src="./images/bochum-total-m.jpg" alt="Bochum Total" class="teaser__image slide-show__slide" data-slide>
+
+                </div>
+                <span class="slide-show__nav-previous" data-nav-previous-slide></span>
+                <span class="slide-show__nav-next" data-nav-next-slide></span>
+              </div>
+              <figcaption>
+                <h2 class="teaser__headline">Open Air Festivals</h2>
+                <p class="teaser__text">Das Open Air ist ein live dargebotenes musikalisches Großereignis unter freiem Himmel.</p>
+                <a href="open-air-festivals.html" class="teaser__cta">mehr zu Open Air Festivals</a>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="page-footer">
+    
+      <p class="page-footer__text">Diese Website ist im <a href="https://th-koeln.github.io/mi-bachelor-webdevelopment/">Vertiefungsmodul Webdevelopment</a> im Studiengang Medieninformatik an der TH Köln erarbeitet worden.</p>
+
+      <h2 class="page-footer__headline">Bildquellen:</h2>
+      <p class="page-footer__text">Alle Texte und Bilder dieser Website sind Wikipedia entnommen. Im Einzelnen sind dies:</p>
+      <ul class="page-footer__text linklist">
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=41386346">Musikfestivals Bochum Total: Von Krd - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=7450295">Maiwoche: Von Corradox - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=19529579">Dixieland Dresden: Von Brücke-Osteuropa - Eigenes Werk, CC0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=41523882">Schlagermove: Von Frank Schwichtenberg - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=12381395">Das Fest: Von Moritz Vogt - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=59392655">Schlossgrabenfest: Von Sven Mandel - Eigenes Werk, CC BY-SA 4.0</a></li>
+        <li class="linklist__item"><a href="https://de.wikipedia.org/w/index.php?curid=2671198">Rock im Park: Von steve20079 - selber geschossen, Bild-frei</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=47221075">Bardentreffen: Von Rs-foto - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=41685590">Breminale: Von Jocian - Eigenes Werk, CC BY-SA 4.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=172325">Düsseldorfer Jazz-Rally: Von © Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons), CC BY-SA 4.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=7662763">Maiwoche Maiwoche - The Rattles: Von ThomasLieven - Eigenes Werk, CCBY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=7450295">Maiwoche - Marktplatz: Von Corradox - Eigenes Werk, CC BY-SA 3.0,</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=16099807">Maiwoche -Bigband: Von Sebmus - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=4090790">Open-Air Live Aid: Von Squelle - Eigenes Werk, CC BY-SA 3.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=1972265">Rock am Ring: Von Elmar J. Lordemann, CC BY-SA 2.0 de</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=49800362">A3C: Von Jadea3c - Eigenes Werk, CC BY-SA 4.0</a></li>
+        <li class="linklist__item"><a href="https://commons.wikimedia.org/w/index.php?curid=38105988">Tomorrowland: Von Global Stomping - TomorrowLand - Get Wicky!!!, CC BY-SA 2.0</a></li>
+      </ul>
+    
+  </footer>
+</body>
+
+</html>
