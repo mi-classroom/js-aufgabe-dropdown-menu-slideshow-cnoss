@@ -1,11 +1,15 @@
-function toogleMenu() { 
-  let interactionElement = document.querySelector("[data-main-navigation]");
-  let menuElement = document.querySelector("[data-menu-nav]")
-  
-  interactionElement.addEventListener('click', function () { 
-    interactionElement.classList.toggle("hamburger-button--is-open");
-    menuElement.classList.toggle("main-header__menu-bar-nav--is-open");
-  });
+function toogleMenu() {
+  const interactionElementClass = '.js-navigation-interaction-element';
+  const interactionElementAdditionalClass = 'hamburger-button--is-open';
+  const menuElementClass = 'main-header__menu-bar-nav--is-open';
 
+  const interactionElement = document.querySelector(interactionElementClass);
+  const interactionTarget = interactionElement.dataset.jsInteractionTarget;
+  const menuElement = document.querySelector(interactionTarget);
+
+  interactionElement.addEventListener('click', () => {
+    interactionElement.classList.toggle(interactionElementAdditionalClass);
+    menuElement.classList.toggle(menuElementClass);
+  });
 }
 toogleMenu();
