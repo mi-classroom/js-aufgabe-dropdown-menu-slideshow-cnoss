@@ -27,48 +27,77 @@ function toogleMenu() {
 * Blättert in der Slideshow ein Bild vor oder zurück
 *
 */
-function switchSlides() {
-  const slides = document.querySelectorAll('[data-js-slide]');
-  const interactionElementNext = document.querySelector('[data-js-nav-next-slide]');
-  const interactionElementPrevious = document.querySelector('[data-js-nav-previous-slide]');
-  const slideClassVisible = 'slide-show__slide--visible';
-  const slideShowElement = document.querySelector('[data-js-slide-show]');
-  const configJSON = slideShowElement.getAttribute('data-js-slide-show');
-  const dotActiveClass = 'dot-navigation__dot--active';
-  let wrapAround = false;
-  let activeSlide = 0;
-  const dots = [];
 
-  function showSlide(activeSlideIndex) {
-    slides[activeSlideIndex].classList.add(slideClassVisible);
-    dots[activeSlideIndex].classList.add(dotActiveClass);
+class Slideshow {
+  constructor(slideShowContainer) {
+    this.slides = slideShowContainer.querySelectorAll('[data-js-slide]');
+    this.interactionElementNext = slideShowContainer.querySelector('[data-js-nav-next-slide]');
+    this.interactionElementPrevious = slideShowContainer.querySelector('[data-js-nav-previous-slide]');
+    this.slideClassVisible = 'slide-show__slide--visible';
+    this.slideShowElement = slideShowContainer;
+    this.configJSON = this.slideShowElement.getAttribute('data-js-slide-show');
+    this.dotActiveClass = 'dot-navigation__dot--active';
+    this.wrapAround = false;
+    this.activeSlide = 0;
+    this.dots = [];
+
+    const config = JSON.parse(this.configJSON);
+    this.wrapAround = config.wrapAround;
+
+    // Container für Dots erzeugen
+    const dotNavigationElement = document.createElement('ol');
+    dotNavigationElement.classList.add('dot-navigation');
+    this.slideShowElement.appendChild(dotNavigationElement);
+
+
+    this.slides.forEach((slide, index) => {
+      const dotElement = document.createElement('li');
+      dotElement.classList.add('dot-navigation__dot');
+      dotElement.setAttribute('data-slide-index', index);
+      dotElement.addEventListener('click', (e) => { this.onClickDot(e); });
+      dotNavigationElement.appendChild(dotElement);
+      this.dots.push(dotElement);
+      slide.addEventListener('click', (e) => { Slideshow.toggleFullScreen(e); });
+    });
+
+    // für jeden Slide Dot erzeugen und dem Container hinzufügen
+    // für jeden Dot ClickEventlistener hinzüfügen
+    this.interactionElementNext.addEventListener('click', () => { this.changeSlide('next'); });
+    this.interactionElementPrevious.addEventListener('click', () => { this.changeSlide('previous'); });
+
+    this.showSlide(this.activeSlide);
   }
 
-  function hideSlide(activeSlideIndex) {
-    slides[activeSlideIndex].classList.remove(slideClassVisible);
-    dots[activeSlideIndex].classList.remove(dotActiveClass);
+  showSlide(activeSlideIndex) {
+    this.slides[activeSlideIndex].classList.add(this.slideClassVisible);
+    this.dots[activeSlideIndex].classList.add(this.dotActiveClass);
   }
 
-  function changeSlide(direction) {
-    hideSlide(activeSlide);
+  hideSlide(activeSlideIndex) {
+    this.slides[activeSlideIndex].classList.remove(this.slideClassVisible);
+    this.dots[activeSlideIndex].classList.remove(this.dotActiveClass);
+  }
+
+  changeSlide(direction) {
+    this.hideSlide(this.activeSlide);
 
     if (direction === 'next') {
-      if (activeSlide + 1 < slides.length) {
-        activeSlide += 1;
-      } else if (wrapAround === true) {
-        activeSlide = 0;
+      if (this.activeSlide + 1 < this.slides.length) {
+        this.activeSlide += 1;
+      } else if (this.wrapAround === true) {
+        this.activeSlide = 0;
       }
-    } else if (activeSlide - 1 < 0) {
-      if (wrapAround === true) {
-        activeSlide = slides.length - 1;
+    } else if (this.activeSlide - 1 < 0) {
+      if (this.wrapAround === true) {
+        this.activeSlide = this.slides.length - 1;
       }
     } else {
-      activeSlide -= 1;
+      this.activeSlide -= 1;
     }
-    showSlide(activeSlide);
+    this.showSlide(this.activeSlide);
   }
 
-  function toggleFullScreen(e) {
+  static toggleFullScreen(e) {
     const target = e.currentTarget;
     if (!document.fullscreenElement) {
       target.requestFullscreen();
@@ -77,45 +106,25 @@ function switchSlides() {
     }
   }
 
-  function onClickDot(e) {
+  onClickDot(e) {
     const target = e.currentTarget;
     const index = parseInt(target.getAttribute('data-slide-index'), 10);
 
-    if (activeSlide === index) {
+    if (this.activeSlide === index) {
       return;
     }
 
-    hideSlide(activeSlide);
-    showSlide(index);
-    activeSlide = index;
+    this.hideSlide(this.activeSlide);
+    this.showSlide(index);
+    this.activeSlide = index;
   }
-
-  const config = JSON.parse(configJSON);
-  wrapAround = config.wrapAround;
-
-  // Container für Dots erzeugen
-  const dotNavigationElement = document.createElement('ol');
-  dotNavigationElement.classList.add('dot-navigation');
-  slideShowElement.appendChild(dotNavigationElement);
-
-
-  slides.forEach((slide, index) => {
-    const dotElement = document.createElement('li');
-    dotElement.classList.add('dot-navigation__dot');
-    dotElement.setAttribute('data-slide-index', index);
-    dotElement.addEventListener('click', onClickDot);
-    dots.push(dotElement);
-    dotNavigationElement.appendChild(dotElement);
-    slide.addEventListener('click', toggleFullScreen);
-  });
-
-  // für jeden Slide Dot erzeugen und dem Container hinzufügen
-  // für jeden Dot ClickEventlistener hinzüfügen
-  interactionElementNext.addEventListener('click', () => { changeSlide('next'); });
-  interactionElementPrevious.addEventListener('click', () => { changeSlide('previous'); });
-
-  showSlide(activeSlide);
 }
 
+
+const slideshows = document.querySelectorAll('[data-js-slide-show]');
+slideshows.forEach((slideshow) => {
+  new Slideshow(slideshow);
+});
+
 toogleMenu();
-switchSlides();
+// switchSlides();
