@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/extensions
+import Swipe from './modules/swipe.js';
+
 /**
 * toogleMenu
 *

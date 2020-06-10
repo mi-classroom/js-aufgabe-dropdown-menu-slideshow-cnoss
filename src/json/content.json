@@ -1,0 +1,25 @@
+[
+  {
+    "images": [
+      "maiwoche-m.jpg",
+      "maiwoche-marktplatz-m.jpg",
+      "maiwoche-bigband-m.jpg"
+    ],
+    "info": "Maiwoche ist der Name eines alljährlich stattfindenden Festes, das es sowohl in Osnabrück als auch in Herdecke gibt.",
+    "linktext": "mehr zur Maiwoche",
+    "title": "Maiwoche",
+    "url": "maiwoche.html"
+  },
+  {
+    "images": [
+      "duesseldorfer-jazz-rally-m",
+      "dixieland-dresden-m",
+      "bochum-total-m.jpg"
+    ],
+    "info": "Das Open Air ist ein live dargebotenes musikalisches Großereignis unter freiem Himmel.",
+    "linktext": "mehr zur Open Air Festivals",
+    "title": "Open Air Festivals",
+    "url": "open-air-festivals.html"
+
+  }
+]
